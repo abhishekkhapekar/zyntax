@@ -1,0 +1,43 @@
+<svg width="500" height="500" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="3" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <filter id="inner-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1.5" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#logo-shadow)">
+
+    <circle cx="100" cy="100" r="90" fill="#247C7C"/>
+
+    <circle cx="100" cy="100" r="80" fill="#FFFFFF"/>
+
+    <g filter="url(#inner-shadow)">
+      <path d="M 55 60 L 140 60 L 120 85 L 35 85 Z" fill="#247C7C"/>
+      
+      <path d="M 80 115 L 165 115 L 145 140 L 60 140 Z" fill="#247C7C"/>
+
+      <text x="100" y="101" 
+            font-family="Montserrat, Arial, sans-serif" 
+            font-size="28" 
+            font-weight="600" 
+            fill="#3D3D3D" 
+            text-anchor="middle" 
+            dominant-baseline="middle"
+            letter-spacing="2">
+        ZYNTAX
+      </text>
+    </g>
+  </g>
+</svg>

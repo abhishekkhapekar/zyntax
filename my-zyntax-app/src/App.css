@@ -29,10 +29,72 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Documentation UI Styles */
+.docs-app { color: #1b1f23; background: #ffffff; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: #282c34; color: #ffffff; border-radius: 6px; }
+
+.docs-header { background: #282c34; color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+
+
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.brand-group { display: flex; align-items: center; gap: 12px; }
+.brand-logo { height: 40px; width: 40px; }
+.brand-text { display: flex; flex-direction: column; }
+.brand-title { margin: 0; font-size: 20px; line-height: 1.2; }
+.brand-tagline { margin: 2px 0 0; font-size: 12px; color: rgba(255,255,255,0.7); }
+
+.primary-nav { display: none; }
+.nav-link { color: #61dafb; text-decoration: none; font-weight: 500; padding: 6px 8px; border-radius: 6px; }
+.nav-link:hover, .nav-link:focus { background: rgba(97,218,251,0.12); outline: none; }
+
+.docs-layout { display: grid; grid-template-columns: 260px 1fr; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+/* Sidebar enhancements */
+.docs-sidebar { position: sticky; top: 72px; align-self: start; height: calc(100vh - 96px); overflow: auto; padding: 12px 8px 24px; border-right: 1px solid #eaeef2; background: linear-gradient(180deg, #f6f8fa 0%, #ffffff 100%); }
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-heading { margin: 16px 8px 8px; font-weight: 800; font-size: 12px; letter-spacing: 0.04em; color: #57606a; text-transform: uppercase; position: sticky; top: 0; background: linear-gradient(180deg, rgba(246,248,250,1) 0%, rgba(255,255,255,1) 100%); padding: 6px 8px; border-radius: 6px; }
+.sidebar-link { display: block; padding: 8px 12px 8px 28px; color: #24292e; text-decoration: none; border-left: 3px solid transparent; border-radius: 6px; position: relative; }
+.sidebar-link::before { content: ""; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: #d0d7de; transition: background 0.2s ease; }
+.sidebar-link:hover::before, .sidebar-link:focus::before { background: #61dafb; }
+.sidebar-link:hover, .sidebar-link:focus { background: #eaf5ff; border-left-color: #61dafb; outline: none; }
+.sidebar-external { display: inline-block; margin: 16px 12px; font-weight: 700; }
+
+.docs-content { min-width: 0; }
+.content-section { max-width: 900px; margin: 0 auto 40px; padding-bottom: 24px; border-bottom: 1px solid #eaeef2; }
+.section-title { margin: 0 0 12px; font-size: 28px; line-height: 1.25; color: #0d1117; }
+.section-lead { margin: 0 0 16px; font-size: 16px; color: #4a5568; }
+
+.subheading { margin: 20px 0 8px; font-size: 18px; }
+.list { margin: 8px 0 0; padding: 0 0 0 20px; }
+.option { font-weight: 600; }
+
+.code-block { background: #0b1020; color: #c8e1ff; border-radius: 8px; padding: 12px 14px; overflow: auto; line-height: 1.5; }
+.code-block code { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; }
+
+.api-list { margin: 0; }
+.api-list dt { margin: 14px 0 4px; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; background: #f6f8fa; padding: 8px; border-radius: 6px; }
+.api-list dd { margin: 0 0 12px 0; color: #57606a; }
+
+.docs-footer { border-top: 1px solid #eaeef2; background: #f6f8fa; }
+.footer-text { max-width: 1200px; margin: 0 auto; padding: 16px 24px; color: #57606a; }
+
+@media (max-width: 960px) {
+  .docs-layout { grid-template-columns: 1fr; padding: 16px; }
+  .docs-sidebar { display: none; }
+  .header-inner { padding: 12px 16px; }
+  .brand-title { font-size: 18px; }
 }
